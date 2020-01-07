@@ -1,3 +1,5 @@
+%Example usage: possible([danny, jef], 5, Shifts).
+
 worker(danny, 3, 7).
 worker(jef, 2, 2).
 worker(ann, 2, 4).
