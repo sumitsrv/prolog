@@ -1,6 +1,7 @@
 :- use_module(library(clpfd)).
 
-/*Execute using:
+/* Swimsuits puzzle - using CLP.
+ * Execute using:
  * swim(FNs, LNs, SS, CLs),
  * labeling([], FNs),
  * labeling([], LNs),
@@ -23,7 +24,7 @@ swim(FNs, LNs, SS, CLs):-
     all_different(CLs),
     Rachel #= Travers,
     Rachel #\= Red,
-    Rachel #= White + 1,
+    Rachel #= White - 1,
     White #= S11 #<==> C7,
     White #= S12 #<==> C8,
     White #= S13 #<==> C9,
@@ -43,8 +44,8 @@ swim(FNs, LNs, SS, CLs):-
     Amelia #= S12 #<==> C5,
     Amelia #= S13 #<==> C6,
     C4 + C5 + C6 #= 1,
-    Rachel #= Couch + 1,
-    Rachel #= Blue - 2,
+    Rachel #= Couch - 1,
+    Rachel #= Blue + 2,
     Julia #\= Couch,
     James #= S21 #<==> C10,
     James #= S22 #<==> C11,
@@ -56,8 +57,10 @@ swim(FNs, LNs, SS, CLs):-
     Julia #\= 5,
     Julia #\= Black,
     Julia #\= West,
-    Black #= S21,
     Black #\= 5,
+    Black #= S21 #<==> C12,
+    Black #= S22 #<==> C13,
+    C12 + C13 #= 1,
     Black #\= West,
     West #\= 5.
     
